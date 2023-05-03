@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&display=swap');
+
+* {
+    --navbar-bg-color: black;
+    --section-active-color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+
+main {
+    margin-top: 80px;
+}
+
+main header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/header-bg.jpg');
+    color: var(--section-active-color);
+    height: 300px;
+}
+
+header h1 {
+    font-size: 80px;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+section h2 {
+    font-size: 50px;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    background-color: var(--navbar-bg-color);
+    padding-left: 0;
+    padding-right: 150px;
+    margin: auto;
+    box-sizing: border-box;
+    gap: 0 50px;
+    color: white;
+}
+
+.navbar li {
+    border-bottom: 2px solid var(--navbar-bg-color);
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: lighter;
+}
+
+.navbar li a.active {
+    border-bottom: 2px solid var(--section-active-color);
+}
+
+.section__container {
+    display: flex;
+    height: 600px;
+    width: 60%;
+    padding: 0 100px;
+    border-radius: 5px;
+    gap: 0 100px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: var(--section-active-color);
+}
+
+.section__container img {
+    border-radius: 10px;
+}
+
+.section-img {
+    height: 60%;
+    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.inner__container button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+	cursor: pointer;
+	background-color: var(--navbar-bg-color);
+    color: var(--section-active-color);
+}
+
+#section1 {
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+}
+
+#section2 {
+    background-color: #63d471;
+    background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+}
+
+#section3 {
+    background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+}
+
+#section4 {
+    background-color: #7ee8fa;
+    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+}
