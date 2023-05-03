@@ -5,7 +5,9 @@ function setActiveSection(sec) {
     const notActiveLink = document.querySelector('.active');
     notActiveLink.classList.remove('active');
 
-    for (const link of navBar.childNodes) {
+    for (const item of navBar.childNodes) {
+        const link = item.firstChild;
+        
         if (link.innerHTML === sec.dataset.nav) {
             link.classList.add('active');
             break;
@@ -13,18 +15,39 @@ function setActiveSection(sec) {
     }
 }
 
+const scrollToSection = anchor => {
+    anchor.addEventListener('click', (evt) => {
+        evt.preventDefault();
+
+        for (const section of sections) {
+            if (anchor.innerHTML === section.dataset.nav) {
+                section.scrollIntoView({
+                    behavior: "smooth",
+                });
+            }
+        }
+    });
+};
+
 function navMenu() {
     const fragment = document.createDocumentFragment();
 
-    for (const section of sections) {
+    for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const link = document.createElement('a');
         const navItem = document.createElement('li');
-        navItem.innerHTML = section.dataset.nav;
 
+        link.innerHTML = section.dataset.nav;
+        link.setAttribute('href', `#section${i}`);
+        scrollToSection(link);
+
+        navItem.appendChild(link);
         fragment.appendChild(navItem);
     }
 
     // highlight the first section as active in the navbar
-    fragment.childNodes[0].classList.add('active');
+    const firstLink = fragment.childNodes[0].firstChild;
+    firstLink.classList.add('active');
 
     navBar.appendChild(fragment);
 }
