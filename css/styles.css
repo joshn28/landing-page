@@ -113,7 +113,7 @@ footer p {
     border-radius: 10px;
 }
 
-.section-img {
+.section__img {
     height: 300px;
     width: auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -124,7 +124,7 @@ footer p {
 	background-color: var(--navbar-bg-color);
 }
 
-.scroll-btn {
+.scroll__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,7 +186,7 @@ footer p {
         margin-top: 10px;
     }
 
-    .section-img {
+    .section__img {
         height: 35%;
         width: min(100%, auto);
     }
@@ -223,7 +223,7 @@ footer p {
         gap: 20px 0;
     }
 
-    .section-img {
+    .section__img {
         height: 170px;
         width: auto;
     }
