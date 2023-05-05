@@ -32,6 +32,16 @@ header h1 {
     font-size: 80px;
 }
 
+button {
+    background: none;
+	color: inherit;
+	border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    border-radius: 5px;
+}
+
 section {
     height: 100vh;
     display: flex;
@@ -109,24 +119,44 @@ footer p {
 }
 
 .inner__container button {
-    background: none;
-	color: inherit;
-	border: none;
 	padding: 10px 20px;
-    font-weight: bold;
-    font-family: inherit;
-    border-radius: 5px;
-	cursor: pointer;
 	background-color: var(--navbar-bg-color);
 }
 
-@media(max-width: 900px) {
+.scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    padding: 20px;
+    background: center no-repeat url('../img/arrow-up.svg') var(--font-color);
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 2s;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 1s;
+}
+
+@media(max-width: 1024px) {
     section {
         padding-top: 100px;
     }
 
     footer {
         margin-top: 100px;
+    }
+
+    .navbar {
+        justify-content: center;
+        padding: 0;
     }
 
     .section__container {
@@ -146,7 +176,8 @@ footer p {
     }
 
     .section-img {
-        height: 270px;
+        height: 40%;
+        width: 100%;
     }
 }
 
@@ -183,6 +214,7 @@ footer p {
 
     .section-img {
         height: 170px;
+        width: auto;
     }
 }
 
