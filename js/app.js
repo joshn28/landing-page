@@ -64,6 +64,35 @@ document.addEventListener('scroll', () => {
 });
 
 /**
+* @description Add an event listener to the DOM for the functionality to show the scroll to the top button
+*/
+document.addEventListener('scroll', () => {
+    const firstSection = document.querySelector('section');
+    const scrollBtn = document.querySelector('.scroll-btn');
+    const rect = firstSection.getBoundingClientRect();
+
+    // Check if the user scrolls below the fold of the page
+    if (rect.top <= 0) {
+        scrollBtn.classList.remove('hidden');
+    } else {
+        scrollBtn.classList.add('hidden');
+    }
+});
+
+/**
+* @description Add an event listener to the DOM for the functionality to scroll to top of the page
+*/
+document.addEventListener('click', (evt) => {
+    if (evt.target.nodeName === 'BUTTON') {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    }
+});
+
+/**
 * @description Add an event listener to the navigation menu to add the functionality to scroll to sections
 */
 navBar.addEventListener('click', evt => {
