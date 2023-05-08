@@ -53,10 +53,10 @@ document.addEventListener('scroll', () => {
 
         // Check if the section is being viewed
         if (rect.top >= -700) {
-            const notActive = document.querySelector('.active-sec');
-            notActive.classList.remove('active-sec');
+            const notActive = document.querySelector('.active__sec');
+            notActive.classList.remove('active__sec');
 
-            section.classList.add('active-sec');
+            section.classList.add('active__sec');
             setActiveLink(section);
             break;
         }
@@ -68,7 +68,7 @@ document.addEventListener('scroll', () => {
 */
 document.addEventListener('scroll', () => {
     const firstSection = document.querySelector('section');
-    const scrollBtn = document.querySelector('.scroll-btn');
+    const scrollBtn = document.querySelector('.scroll__btn');
     const rect = firstSection.getBoundingClientRect();
 
     // Check if the user scrolls below the fold of the page
